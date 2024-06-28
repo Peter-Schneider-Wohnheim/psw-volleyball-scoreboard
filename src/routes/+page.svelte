@@ -4,12 +4,11 @@
 
 	let counter1: any;
 	let counter2: any;
+	let showModal: boolean = true;
 
-	let maxPoints = 1;
+	let maxPoints = 25;
 
 	onMount(() => {
-
-		maxPoints = Number(window.prompt('Maximum score', '21'));
 		counter1.reset();
 		counter2.reset();
 
@@ -34,6 +33,12 @@
 	function handleReset() {
 		console.log('Counter has been reset');
 	}
+
+	function handleModalSubmit() {
+		showModal = false;
+		counter1.reset();
+		counter2.reset();
+	}
 </script>
 <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
 	<div class="row">
@@ -53,6 +58,27 @@
 		<path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
 	</svg>
 </button>
+
+<!-- Bootstrap Modal -->
+{#if showModal}
+	<div class="modal fade show d-block" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Set Maximum Score</h5>
+					<button type="button" class="btn-close" aria-label="Close" on:click={() => showModal = false}></button>
+				</div>
+				<div class="modal-body">
+					<input type="number" class="form-control" bind:value={maxPoints} min="1">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" on:click={handleModalSubmit}>Set max score</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-backdrop fade show"></div>
+{/if}
 
 <style>
     .new-game-btn {
