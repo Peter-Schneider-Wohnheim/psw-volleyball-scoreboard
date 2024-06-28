@@ -14,11 +14,11 @@
 		counter2.reset();
 
 		const handleKeyUp = (event: KeyboardEvent) => {
-			if (event.key === 'ArrowUp') {
+			if (event.key === 'PageUp') {
 				counter1.increment();
-			} else if (event.key === 'ArrowDown') {
+			} else if (event.key === 'PageDown') {
 				counter2.increment();
-			} else if (event.key === 'n') {
+			} else if (event.key === 'b') {
 				counter1.reset();
 				counter2.reset();
 			}

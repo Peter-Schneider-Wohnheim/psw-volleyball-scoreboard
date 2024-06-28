@@ -3,8 +3,8 @@ A very simple app acting as a scoreboard for sports (e.g. volleyball matches). I
 
 ## Features
 - Set the maximum score according to your needs on page load.
-- Use the arrow-up key to increase the left and the arrow-down key to increase the right counter. This allows for using a PowerPoint Presenter as a remote control.
-- Press `n` for a new game.
+- Use the PageUp key to increase the left and the PageDown key to increase the right counter. This allows for using a PowerPoint Presenter as a remote control.
+- Press `b` for a new game (also available on many PowerPoint presenters)
 
 ## Developing
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
